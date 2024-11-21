@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  wordpress:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: 35.95.130.139:3306
+      WORDPRESS_DB_USER: exampleuser
+      WORDPRESS_DB_PASSWORD: examplepass
+      WORDPRESS_DB_NAME: exampledb
+    volumes:
+      - wordpress:/var/www/html
+
+volumes:
+  wordpress:  # This defines the volume to persist WordPress data
